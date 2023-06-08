@@ -1,0 +1,154 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+.style10 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF DRINK DRIVING DETECTION !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="991" align="center">
+                                  <tr>
+                                    <td width="228" height="44" bgcolor="#FF0000"><span class="style10">Enter Idnumber</span></td>
+                                    <td width="239"><input type="text" name="idnumber"></td>
+                                    <td width="227" bgcolor="#FF0000"><span class="style10">Enter City_Location</span></td>
+                                    <td width="277"><input type="text" name="City_Location"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Day</span></td>
+                                    <td><input type="text" name="day"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Sex</span></td>
+                                    <td><select name="Sex">
+                                      <option>--Select--</option>
+                                      <option>M</option>
+                                      <option>F</option>
+                                    </select>                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Age</span></td>
+                                    <td><input type="text" name="Age"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Time</span></td>
+                                    <td><input type="text" name="Time"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Day_of_week</span></td>
+                                    <td><input type="text" name="Day_of_week"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Educational_level</span></td>
+                                    <td><input type="text" name="Educational_level"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Vehicle_driver_relation</span></td>
+                                    <td><input type="text" name="Vehicle_driver_relation"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Driving_experience</span></td>
+                                    <td><input type="text" name="Driving_experience"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Type_of_vehicle</span></td>
+                                    <td><input type="text" name="Type_of_vehicle"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Owner_of_vehicle</span></td>
+                                    <td><input type="text" name="Owner_of_vehicle"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Service_year_of_vehicle</span></td>
+                                    <td><input type="text" name="Service_year_of_vehicle"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Lanes_or_Medians</span></td>
+                                    <td><input type="text" name="Lanes_or_Medians"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Road_allignment</span></td>
+                                    <td><input type="text" name="Road_allignment"></td>
+                                    <td bgcolor="#FF0000"><span class="style10">Enter Road_surface_type</span></td>
+                                    <td><input type="text" name="Road_surface_type"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><span class="style10">Enter Vehicle_movement</span></td>
+                                    <td><input type="text" name="Vehicle_movement"></td>
+                                    <td>&nbsp;</td>
+                                    <td><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="868" height="64" border="0" align="center" >
+                                    <tr><td width="490" bgcolor="#FF0000"><div align="center"><span class="style6">Prediction Of Drink Driving Detection </span> <span class="style10">:: </span></div></td>
+
+
+
+                                      <td width="368" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center"><strong>{{objs}}</strong></div></td>
+                                    </tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
